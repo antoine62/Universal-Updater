@@ -1,6 +1,7 @@
 // Makes use of the citro2d example
 #include <citro2d.h>
 #include "gui_sheet.h"
+#include "colors.hpp"
 
 static C2D_SpriteSheet gui_sheet;
 
@@ -31,9 +32,10 @@ int main() {
         C2D_TargetClear(top, C2D_Color32(255, 255, 255, 0));
         C2D_TargetClear(bottom, C2D_Color32(255, 255, 255, 0));
         C2D_SceneBegin(top);
+        C2D_DrawRectSolid(0, 0, 0.5f, 400, 240, COLOR_DARKBLUE);
         C2D_DrawImageAt(C2D_SpriteSheetGetImage(gui_sheet, gui_sheet_top_bg_idx), 0, 0, 0.6f, NULL, 1.0f, 1.0f);
         C2D_SceneBegin(bottom);
-        C2D_DrawImageAt(C2D_SpriteSheetGetImage(gui_sheet, gui_sheet_bottom_bg_idx), 0, 0, 0.6f, NULL, 1.0f, 1.0f);
+        C2D_DrawRectSolid(0, 0, 0.5f, 320, 240, COLOR_DARKBLUE);
         C3D_FrameEnd(0);
     }
 
